@@ -5,13 +5,13 @@ import top10calculadoras.models.Operadores;
 
 public class Factory {
 
-    Object classeInstanciada;
-
-    public Operadores factory(String nome) {
+    public static Operadores factory(String nome) {
         try {
-            classeInstanciada = Class.forName("top10calculadoras.models." + nome).getDeclaredConstructor().newInstance();
-        } catch (Exception e) {
-            System.out.println("Deu ruim, se vira ae!");
+            Object classeInstanciada = Class.forName("top10calculadoras.models." + nome).getDeclaredConstructor().newInstance();
+            return (Operadores) classeInstanciada;
+        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
