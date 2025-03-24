@@ -8,10 +8,9 @@ public class Factory {
 
     public static Operadores factory(String nome) {
         try {
-            Object classeInstanciada = Class.forName("top10calculadoras.models." + nome).getDeclaredConstructor().newInstance();
+            Object classeInstanciada = Class.forName("calculadora.models." + nome).getDeclaredConstructor().newInstance();
             return (Operadores) classeInstanciada;
         } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
             return null;
         }
     }
