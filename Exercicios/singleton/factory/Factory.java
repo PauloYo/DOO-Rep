@@ -6,13 +6,9 @@ import singleton.models.Operadores;
 
 // Aplicando o Singleton no Factory
 public class Factory {
-
     private static Factory instance;
-    public int value;
 
-    private Factory() {
-        // Construtor privado para impedir instâncias
-    }
+    private Factory() { /* Construtor privado para impedir instâncias */ }
 
     public static Factory getInstance() {
         if (instance == null) {
@@ -23,9 +19,9 @@ public class Factory {
 
     public Operadores factory(String nome) {
         try {
-            Object classeInstanciada = Class.forName("singleton.models." + nome).getDeclaredConstructor().newInstance();
+            Object classeInstanciada = Class.forName("singleton.models." + nome).getDeclaredMethod("getInstance").invoke(null);
             return (Operadores) classeInstanciada;
-        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             return null;
         }
     }

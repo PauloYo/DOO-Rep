@@ -24,17 +24,16 @@ public class Calculadora {
 
                 Operadores operacao = factory.factory(op);
 
-                System.out.println("Insisra dois números para obter um novo resultado!");
-                System.out.print("\nDigite o primeiro número: ");
-                double a = s.nextDouble();
-                System.out.print("Digite o segundo número: ");
-                double b = s.nextDouble();
-                s.nextLine(); // Limpar buffer
-
                 if (operacao == null) {
                     System.out.println("\nOperação inválida!");
                     continue;
                 } else {
+                    System.out.println("Insisra dois números para obter um novo resultado!");
+                    System.out.print("\nDigite o primeiro número: ");
+                    double a = s.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    double b = s.nextDouble();
+                    s.nextLine(); // Limpar buffer
                     System.out.println("\nResultado: " + operacao.calcular(a, b));
                 }
 
