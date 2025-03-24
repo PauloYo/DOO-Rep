@@ -13,28 +13,28 @@ public class Calculadora {
         while (true) {
             System.out.println("Insisra dois números para obter um novo resultado!");
         
-            System.out.println("\nDigite o primeiro número: ");
+            System.out.print("\nDigite o primeiro número: ");
             double a = s.nextDouble();
-            System.out.println("Digite o segundo número: ");
+            System.out.print("Digite o segundo número: ");
             double b = s.nextDouble();
 
-            s.nextLine(); // Consumir o \n
+            s.nextLine(); // Limpar buffer
 
-            System.out.println("\nAgora escolha uma operação:\n- Soma\n- Subtração\n- Multiplicação\n- Divisão\n- Sair\n: ");
+            System.out.print("\nAgora escolha uma operação:\n- Soma\n- Subtracao\n- Multiplicacao\n- Divisao\n- Sair\n: ");
             String op = s.nextLine();
 
             if (op.equals("Sair")) {
-                System.out.println("Até mais!");
+                System.out.println("\nAté mais!");
                 break;
             }
 
             Operadores operacao = Factory.factory(op);
 
             if (operacao == null) {
-                System.out.println("Operação inválida!");
+                System.out.println("\nOperação inválida!");
                 continue;
             } else {
-                System.out.println("Resultado: " + operacao.calcular(a, b));
+                System.out.println("\nResultado: " + operacao.calcular(a, b));
             }
         }
     }
