@@ -18,6 +18,8 @@ public class Calculadora {
             System.out.println("Digite o segundo número: ");
             double b = s.nextDouble();
 
+            s.nextLine(); // Consumir o \n
+
             System.out.println("\nAgora escolha uma operação:\n- Soma\n- Subtração\n- Multiplicação\n- Divisão\n- Sair\n: ");
             String op = s.nextLine();
 
