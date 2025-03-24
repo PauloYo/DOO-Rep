@@ -1,8 +1,9 @@
-package top10calculadoras;
+package calculadora;
 
-import top10calculadoras.factory.Factory;
-import top10calculadoras.models.Operadores;
 import java.util.Scanner;
+
+import calculadora.factory.Factory;
+import calculadora.models.Operadores;
 
 public class Calculadora {
     public static void main(String[] args) {

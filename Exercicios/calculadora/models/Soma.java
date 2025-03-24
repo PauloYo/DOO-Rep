@@ -1,4 +1,4 @@
-package top10calculadoras.models;
+package calculadora.models;
 
 public class Soma implements Operadores {
     @Override
